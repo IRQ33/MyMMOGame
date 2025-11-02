@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message player{
+    int64 id = 1;
+    string name = 2;
+    int32 x = 3;
+    int32 y = 4;
+    float rotate = 5;
+
+}
