@@ -13,8 +13,10 @@ public class Main extends Game {
     public final String ip = "localhost";
     public final int port = 2200;
 
+
     @Override
     public void create() {
+
         batch = new SpriteBatch();
         inputMultiplexer = new InputMultiplexer();
         setScreen(new FirstScreen(this));

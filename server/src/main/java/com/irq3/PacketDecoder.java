@@ -1,4 +1,4 @@
-package com.irq3.mmo.game.net;
+package com.irq3;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -20,6 +20,7 @@ class PacketDecoder extends ByteToMessageDecoder {
         Class<? extends Packet> packetClass = networkSystem.getPacket(id);
         Packet packet1 = packetClass.getDeclaredConstructor().newInstance();
         packet1.decode(byteBuf);
+
         list.add(packet1);
 
 

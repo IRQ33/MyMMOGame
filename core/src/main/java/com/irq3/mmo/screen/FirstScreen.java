@@ -6,22 +6,25 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.irq3.mmo.game.ManagerAssets;
 import com.irq3.mmo.Main;
+import com.irq3.mmo.game.net.Client;
 
 public class FirstScreen extends Screens {
     private BitmapFont bitmapFont;
     private ManagerAssets managerAssets;
+    private Client client;
 
 
     public FirstScreen(Main main) {
         super(main);
         managerAssets = ManagerAssets.getInstance();
+        client = new Client(main);
     }
 
     @Override
     public void show() {
         initFonts();
         if(getMain().DEV){
-
+            client.connect();
         }
 
     }

@@ -1,6 +1,7 @@
 package models;
 
 import io.netty.channel.ChannelHandlerContext;
+import packets.NetworkSystem;
 
 public class Player {
     ChannelHandlerContext ctx;
@@ -8,6 +9,7 @@ public class Player {
     private String name;
     private float x,y;
     private float rotation;
+    private NetworkSystem networkSystem;
 
     public Player(ChannelHandlerContext ctx, long id, String name, float x, float y, float rotation) {
         this.ctx = ctx;
@@ -64,5 +66,13 @@ public class Player {
 
     public void setRotation(float rotation) {
         this.rotation = rotation;
+    }
+
+    public NetworkSystem getNetworkSystem() {
+        return networkSystem;
+    }
+
+    public void setNetworkSystem(NetworkSystem networkSystem) {
+        this.networkSystem = networkSystem;
     }
 }
